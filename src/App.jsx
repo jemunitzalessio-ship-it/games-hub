@@ -293,7 +293,6 @@ export default function App() {
               <a
                 key={game.url}
                 href={game.url}
-                target="_blank"
                 rel="noreferrer"
                 className="arcade-cabinet"
                 style={{
