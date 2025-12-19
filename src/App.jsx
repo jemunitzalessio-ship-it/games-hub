@@ -231,7 +231,14 @@ export default function App() {
         </div>
 
         {/* Main content */}
-        <div style={{ width: "100%", position: "relative", zIndex: 1 }}>
+        <div style={{ 
+          width: "100%", 
+          position: "relative", 
+          zIndex: 1,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}>
           {/* Title */}
           <div style={{ textAlign: "center", marginBottom: "20px", marginTop: "30px" }}>
             <h1 style={{
