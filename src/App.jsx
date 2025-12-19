@@ -44,6 +44,12 @@ export default function App() {
           box-sizing: border-box;
         }
 
+        html, body, #root {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+
         body {
           margin: 0;
           background: linear-gradient(180deg, #0d1b2a 0%, #1b263b 50%, #2d1b3d 100%);
@@ -161,10 +167,12 @@ export default function App() {
 
       <div style={{
         minHeight: "100vh",
+        width: "100%",
         background: "linear-gradient(180deg, #0d1b2a 0%, #1b263b 40%, #2d1b3d 100%)",
         position: "relative",
         overflow: "hidden",
         padding: "40px 20px 60px",
+        boxSizing: "border-box",
       }}>
         {/* Snowflakes */}
         {snowflakes.map((flake) => (
@@ -235,9 +243,6 @@ export default function App() {
           width: "100%", 
           position: "relative", 
           zIndex: 1,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
         }}>
           {/* Title */}
           <div style={{ textAlign: "center", marginBottom: "20px", marginTop: "30px" }}>
@@ -282,6 +287,7 @@ export default function App() {
             gap: "40px",
             flexWrap: "wrap",
             width: "100%",
+            alignSelf: "stretch",
           }}>
             {games.map((game, index) => (
               <a
@@ -293,7 +299,9 @@ export default function App() {
                 style={{
                   textDecoration: "none",
                   color: "inherit",
-                  display: "block",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
                 }}
               >
                 {/* Cabinet */}
