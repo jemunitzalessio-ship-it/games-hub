@@ -231,7 +231,7 @@ export default function App() {
         </div>
 
         {/* Main content */}
-        <div style={{ maxWidth: "1000px", margin: "0 auto", position: "relative", zIndex: 1 }}>
+        <div style={{ width: "100%", position: "relative", zIndex: 1 }}>
           {/* Title */}
           <div style={{ textAlign: "center", marginBottom: "20px", marginTop: "30px" }}>
             <h1 style={{
@@ -274,7 +274,7 @@ export default function App() {
             alignItems: "flex-start",
             gap: "40px",
             flexWrap: "wrap",
-            flexDirection: "row",
+            width: "100%",
           }}>
             {games.map((game, index) => (
               <a
