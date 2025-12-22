@@ -31,6 +31,13 @@ export default function App() {
       screenGradient: "linear-gradient(180deg, #1a0a28 0%, #2d1a4a 50%, #4a2d6b 100%)",
       screenContent: "socks",
     },
+    {
+      title: "Bruce's Blues Odyssey",
+      url: "https://bruces-blues-odyssey.vercel.app/",
+      desc: "Join Bruce on a musical adventure through the blues.",
+      screenGradient: "linear-gradient(180deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
+      screenContent: "blues",
+    },
   ];
 
   return (
@@ -313,20 +320,22 @@ export default function App() {
                   boxShadow: `
                     0 20px 60px rgba(0,0,0,0.5),
                     inset 0 2px 0 rgba(255,255,255,0.1),
-                    0 0 30px ${index === 0 ? "rgba(255,100,100,0.3)" : "rgba(100,255,100,0.3)"}
+                    0 0 30px ${index === 0 ? "rgba(255,100,100,0.3)" : index === 1 ? "rgba(100,255,100,0.3)" : "rgba(255,180,100,0.3)"}
                   `,
                 }}>
                   {/* Marquee (top sign) */}
                   <div style={{
                     background: index === 0 
                       ? "linear-gradient(180deg, #ff4444 0%, #cc0000 100%)"
-                      : "linear-gradient(180deg, #44ff44 0%, #00cc00 100%)",
+                      : index === 1 
+                      ? "linear-gradient(180deg, #44ff44 0%, #00cc00 100%)"
+                      : "linear-gradient(180deg, #ffa500 0%, #cc7000 100%)",
                     borderRadius: "12px 12px 0 0",
                     padding: "12px 10px",
                     textAlign: "center",
                     marginBottom: "10px",
                     boxShadow: `
-                      0 0 20px ${index === 0 ? "rgba(255,0,0,0.5)" : "rgba(0,255,0,0.5)"},
+                      0 0 20px ${index === 0 ? "rgba(255,0,0,0.5)" : index === 1 ? "rgba(0,255,0,0.5)" : "rgba(255,165,0,0.5)"},
                       inset 0 -3px 10px rgba(0,0,0,0.3)
                     `,
                   }}>
@@ -370,7 +379,7 @@ export default function App() {
                       }} />
 
                       {/* Screen content */}
-                      {game.screenContent === "sleigh" ? (
+                      {game.screenContent === "sleigh" && (
                         <div style={{ position: "relative", width: "100%", height: "100%", padding: "20px" }}>
                           {/* Moon */}
                           <div style={{
@@ -440,7 +449,8 @@ export default function App() {
                             PRESS START
                           </div>
                         </div>
-                      ) : (
+                      )}
+                      {game.screenContent === "socks" && (
                         <div style={{ position: "relative", width: "100%", height: "100%", padding: "20px" }}>
                           {/* Maze walls */}
                           <div style={{
@@ -506,6 +516,99 @@ export default function App() {
                             fontSize: "7px",
                             color: "#fff",
                             animation: "flicker 1s infinite",
+                          }}>
+                            PRESS START
+                          </div>
+                        </div>
+                      )}
+                      {game.screenContent === "blues" && (
+                        <div style={{ position: "relative", width: "100%", height: "100%", padding: "20px" }}>
+                          {/* Stage lights */}
+                          <div style={{
+                            position: "absolute",
+                            top: "10px",
+                            left: "20%",
+                            width: "20px",
+                            height: "20px",
+                            background: "radial-gradient(circle, #ffa500 0%, transparent 70%)",
+                            borderRadius: "50%",
+                            animation: "twinkle 1.5s infinite",
+                          }} />
+                          <div style={{
+                            position: "absolute",
+                            top: "10px",
+                            right: "20%",
+                            width: "20px",
+                            height: "20px",
+                            background: "radial-gradient(circle, #ff6347 0%, transparent 70%)",
+                            borderRadius: "50%",
+                            animation: "twinkle 1.8s infinite",
+                            animationDelay: "0.3s",
+                          }} />
+                          {/* Music notes floating */}
+                          <div style={{
+                            position: "absolute",
+                            top: "25%",
+                            left: "15%",
+                            fontSize: "16px",
+                            animation: "float 2s ease-in-out infinite",
+                          }}>🎵</div>
+                          <div style={{
+                            position: "absolute",
+                            top: "20%",
+                            right: "20%",
+                            fontSize: "14px",
+                            animation: "float 2.5s ease-in-out infinite",
+                            animationDelay: "0.5s",
+                          }}>🎶</div>
+                          <div style={{
+                            position: "absolute",
+                            top: "35%",
+                            right: "30%",
+                            fontSize: "12px",
+                            animation: "float 2s ease-in-out infinite",
+                            animationDelay: "1s",
+                          }}>🎵</div>
+                          {/* Bruce character with guitar */}
+                          <div style={{
+                            position: "absolute",
+                            top: "45%",
+                            left: "50%",
+                            transform: "translateX(-50%)",
+                            fontSize: "32px",
+                            animation: "float 3s ease-in-out infinite",
+                          }}>🎸</div>
+                          {/* Stage/floor */}
+                          <div style={{
+                            position: "absolute",
+                            bottom: 0,
+                            left: 0,
+                            right: 0,
+                            height: "35px",
+                            background: "linear-gradient(180deg, #3d2914 0%, #2a1a0a 100%)",
+                            borderTop: "3px solid #5c3d1e",
+                          }} />
+                          {/* Spotlight effect */}
+                          <div style={{
+                            position: "absolute",
+                            bottom: "35px",
+                            left: "50%",
+                            transform: "translateX(-50%)",
+                            width: "80px",
+                            height: "40px",
+                            background: "radial-gradient(ellipse at center, rgba(255,200,100,0.3) 0%, transparent 70%)",
+                          }} />
+                          {/* Press Start text */}
+                          <div style={{
+                            position: "absolute",
+                            bottom: "45px",
+                            left: "50%",
+                            transform: "translateX(-50%)",
+                            fontFamily: "'Press Start 2P'",
+                            fontSize: "7px",
+                            color: "#ffd700",
+                            animation: "flicker 1s infinite",
+                            textShadow: "0 0 10px #ffa500",
                           }}>
                             PRESS START
                           </div>
@@ -616,7 +719,9 @@ export default function App() {
                     width: "4px",
                     background: index === 0 
                       ? "repeating-linear-gradient(180deg, #ff0000 0px, #ff0000 10px, #ffcc00 10px, #ffcc00 20px)"
-                      : "repeating-linear-gradient(180deg, #00ff00 0px, #00ff00 10px, #ffcc00 10px, #ffcc00 20px)",
+                      : index === 1
+                      ? "repeating-linear-gradient(180deg, #00ff00 0px, #00ff00 10px, #ffcc00 10px, #ffcc00 20px)"
+                      : "repeating-linear-gradient(180deg, #ffa500 0px, #ffa500 10px, #4169e1 10px, #4169e1 20px)",
                     borderRadius: "2px",
                   }} />
                   <div style={{
@@ -627,7 +732,9 @@ export default function App() {
                     width: "4px",
                     background: index === 0 
                       ? "repeating-linear-gradient(180deg, #ff0000 0px, #ff0000 10px, #ffcc00 10px, #ffcc00 20px)"
-                      : "repeating-linear-gradient(180deg, #00ff00 0px, #00ff00 10px, #ffcc00 10px, #ffcc00 20px)",
+                      : index === 1
+                      ? "repeating-linear-gradient(180deg, #00ff00 0px, #00ff00 10px, #ffcc00 10px, #ffcc00 20px)"
+                      : "repeating-linear-gradient(180deg, #ffa500 0px, #ffa500 10px, #4169e1 10px, #4169e1 20px)",
                     borderRadius: "2px",
                   }} />
                 </div>
