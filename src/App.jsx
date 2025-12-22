@@ -18,16 +18,16 @@ export default function App() {
 
   const games = [
     {
-      title: "Santa Sleigh Game",
+      title: "Santa's Sleigh Run",
       url: "https://santa-sleigh-game.vercel.app/",
       desc: "Fly Santa's sleigh and dodge obstacles on the way to Nashville.",
       screenGradient: "linear-gradient(180deg, #0a1628 0%, #1a3a5c 50%, #2d5a7b 100%)",
       screenContent: "sleigh",
     },
     {
-      title: "Socks Game",
+      title: "Socks' Bone Hunt",
       url: "https://socks-game-1.vercel.app/",
-      desc: "Guide Socks through the maze and survive.",
+      desc: "Guide Socks through the maze and get all the bones.",
       screenGradient: "linear-gradient(180deg, #1a0a28 0%, #2d1a4a 50%, #4a2d6b 100%)",
       screenContent: "socks",
     },
