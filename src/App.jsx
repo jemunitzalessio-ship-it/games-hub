@@ -261,7 +261,7 @@ export default function App() {
               marginBottom: "8px",
               lineHeight: 1.4,
             }}>
-              🎄 SPAULDING 🎄
+              🎄 SPAULDING FUNLAND🎄
             </h1>
             <h2 style={{
               fontFamily: "'Press Start 2P', cursive",
